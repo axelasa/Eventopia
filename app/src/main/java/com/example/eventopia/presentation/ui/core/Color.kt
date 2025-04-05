@@ -1,4 +1,4 @@
-package com.example.eventopia.ui.theme
+package com.example.eventopia.presentation.theme.ui.core
 
 import androidx.compose.ui.graphics.Color
 
