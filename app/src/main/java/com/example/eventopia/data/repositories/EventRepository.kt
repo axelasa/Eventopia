@@ -17,17 +17,19 @@ class EventRepositoryImpl(private val ticketApiService: TicketApi,
        try {
            val response = ticketApiService.fetchEvents(mapOf(
                "apikey" to apikey,
-               "page" to page,
-               "size" to pageSize
-           )).execute()
+               "page" to page.toString(),
+               "size" to pageSize.toString()
+           ))
            if(!response.isSuccessful){
                return TaskError(
                    response.message(),
                    HttpException(response),)
            }
            val data = response.body()!!
+           println("HERE IS THE DATA $data")
            return TaskSuccess(data._embedded.events)
        }catch (e:Exception){
+           println(e.printStackTrace())
          return TaskError(e.message?: "Something went Wrong",e)
        }
     }

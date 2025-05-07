@@ -9,7 +9,7 @@ data class EventSummary(
 
 sealed class ExploreState
 
-class LoadingExploreState: ExploreState()
+data object LoadingExploreState : ExploreState()
 
 
-class LoadedExploreState:ExploreState()
+data object LoadedExploreState : ExploreState()
