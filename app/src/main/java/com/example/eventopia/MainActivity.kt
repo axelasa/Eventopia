@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         exploreViewModel = ExploreViewModel(
             Application(),
-            eventRepository = EventRepositoryImpl(ticketApiService =HttpClient.ticketService , apikey ="eq4X5AgfxXcj4R854Oa3cBK6SC0EEcsb",))
+            eventRepository = EventRepositoryImpl(ticketApiService =HttpClient.ticketService , apikey = "",))
 exploreViewModel.toastMessage.observe(this){
 
     println("HERE IS THE ERROR  $it")
